@@ -91,7 +91,7 @@ docker compose up --build
 
 <h2>Swagger</h2>
 <pre>
-http://localhost:8080/swagger-ui.html
+http://localhost:8080/swagger-ui/index.html
 </pre>
 
 <hr/>
