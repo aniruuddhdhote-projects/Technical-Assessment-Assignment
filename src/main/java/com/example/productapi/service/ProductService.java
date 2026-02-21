@@ -4,7 +4,10 @@ import com.example.productapi.entity.Product;
 import com.example.productapi.repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.*;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
+
+import java.util.concurrent.CompletableFuture;
 
 @Service
 @RequiredArgsConstructor
@@ -14,6 +17,13 @@ public class ProductService {
 
     public Product create(Product product){
         return repository.save(product);
+    }
+
+    @Async
+    public CompletableFuture<Page<Product>> getAllAsync(int page,int size){
+        return CompletableFuture.completedFuture(
+                repository.findAll(PageRequest.of(page,size,Sort.by("id").descending()))
+        );
     }
 
     public Page<Product> getAll(int page,int size){

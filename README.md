@@ -112,6 +112,7 @@ http://localhost:8080/swagger-ui.html
 <li>DTO based API design</li>
 <li>JWT filter security</li>
 <li>Centralized error handling</li>
+<li>Database indexing implemented for optimized query performance.</li>
 </ul>
 
 <hr/>
